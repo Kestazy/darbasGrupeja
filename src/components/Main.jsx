@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 const Main = () => {
     const [filmName, setFilmName] = useState('');
@@ -45,6 +45,15 @@ const Main = () => {
                 />
                 <button>Get movie</button>
             </form>
+            {
+                movies.length > 0 ? movies.map((movie, index) => (
+                    <div key={index}>
+                        <h2>{movie.Title}</h2>
+                        <h2>{movie.Year}</h2>
+                        <img src={movie.Poster} alt={movie.Title} />
+                    </div>
+                )): <h3>nerasta</h3>
+            }
         </div>
     )
 }
